@@ -1,0 +1,23 @@
+@import "Helpers";
+.btn{
+  width:162px;
+  height:54px;
+  background-color: $dark;
+  color: $white;
+  border: 1px solid black;
+  transition: background-color 0.3s;
+  font-weight: 700;
+  &:hover{
+    background-color: $white;
+    color: $dark;
+  }
+}
+
+.secondary-btn{
+  color: $main-color;
+  font-weight: 700;
+  .fas{
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}

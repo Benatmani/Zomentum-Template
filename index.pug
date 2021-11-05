@@ -1,0 +1,81 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="style.css")
+    link(rel="stylesheet" , href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" , media="all") 
+    title Zomentum
+  body 
+    header 
+      nav 
+        .logo 
+          img(src="img/Frame (1).png", alt="")
+        input(type="checkbox", name="" id="check")
+        label(for="check") #[i(class="fas fa-bars")]
+        ul 
+          -var arr = ["features","integrations","pricing","company","blog","get a demos"]
+          each val,index in arr 
+            li #[a(href="#")= val] 
+          li #[i(class="far fa-user") ] #[span login] 
+      .hero-section
+        .container
+          .content   
+            h1 Find the right partners to fuel your business growth
+            p Join a vibrant community of MSPs to forge long-lasting relationships with partners that help you create excellent customer experiences
+            button.btn Register Today 
+        img(src="img/Frame.png") 
+        img(src="img/Partner hero image right.png", alt="")
+    main
+      section.features 
+        .container 
+          h2  List. Sell. Grow 
+          .wrapper 
+            mixin feature ( i , content )
+              .feature
+                div 
+                  i(class=i)
+                p=content 
+            +feature("fas fa-boxes","Be a part of the only All-In-One platform for IT services") 
+            +feature("fas fa-search-dollar","Come closer to finding your next customer")
+            +feature("fas fa-chart-line","Grow your business with a single click")
+      
+      //- start services section -//   
+      
+      section.services 
+        .container 
+          mixin service ( title , paragraph , img , button = "Signup now" , icon = "fas fa-arrow-right" )
+            .service
+              img(src=img)
+              .content 
+                h3= title 
+                p= paragraph 
+                a(href="#" class="secondary-btn")= button
+                  i(class=icon)
+          +service("Your channel program on steroids","Tired of finding MSPs that can help you boost your channel sales? You’re in luck, because they’re all here.","img/Group 135.png"," "," ")
+          +service("Become the vendor everyone wants to buy from","Gain brand authority and visibility with the help of the largest IT service ecosystem. Find customers who are looking for your solution right now!", "img/2nd service.png")
+          +service("It’s like having Your best Salesman on autopilot","Share collaterals and documents that are automatically branded. Leverage a rich partner network that sells your solution exactly the way your best salesman would.","img/It’s like having Your best Salesman on autopilot.png")
+          +service("Track your channel performance","Monitor the health and revenue of your channel program and streamline your campaign to win more customers within Zomentum.","img/Track your channel performance.png")
+          +service("Get The best version of Your sales playbook","Gather insights about top channel sellers and find out what pitch and collaterals ensure maximum profitability. Win happy customers with an optimized sales playbook.","img/Get The best version of  Your sales playbook.png")
+
+    //- end services section -// 
+    footer 
+      .container 
+        .top 
+          mixin links (title , arr = [link_1 , link_2 , link_3 , link_4 , link_5])
+            .links 
+              h4= title 
+              ul
+                each val in arr 
+                  li= val 
+          +links("Product",["features","Pricing", "integrations","product"])
+          +links("Company",["contact us","about us","submit and tickets","privecy policy","terms and conditions"])
+          +links("Users",["login" , "get a demos","talk to us","privecy and policy","terms and conditions"])
+          +links("Guides",["MSP","MSP sales"]) 
+          +links("Contact Us",["adress"])
+        .bottom 
+          p © 2020 Pactora Inc. All rights reserved.
+          p follow us on social 
+
+    
